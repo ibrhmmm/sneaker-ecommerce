@@ -10,7 +10,28 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="/style.css">
+    <style>
+        .gender-filter {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
+        .gender-filter select {
+            padding: 1rem;
+            border-radius: .5rem;
+            border: .2rem solid #333;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: #333;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: all .2s linear;
+        }
+
+        .gender-filter select:hover {
+            border-color: #f38609;
+        }
+    </style>
 </head>
 <body>
 
@@ -89,6 +110,15 @@
 <!-- products section starts  -->
 
 <section class="products" id="products">
+
+    <div class="gender-filter">
+        <select>
+            <option value="">Shop For</option>
+            <option value="man">Man</option>
+            <option value="woman">Woman</option>
+            <option value="child">Child</option>
+        </select>
+    </div>
 
     <h1 class="heading"> latest <span>products</span> </h1>
 
