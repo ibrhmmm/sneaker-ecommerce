@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soles - Order Confirmation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <a href="/index.html" class="logo">soles</a>
+        <nav class="navbar">
+            <a href="/index.html#home">home</a>
+            <a href="/index.html#products">products</a>
+            <a href="/index.html#featured">featured</a>
+            <a href="/index.html#review">review</a>
+        </nav>
+        <div class="icons">
+            <a href="/wishlist.html" class="fas fa-heart"></a>
+            <a href="/payment/cart.html" class="fas fa-shopping-cart"></a>
+            <a href="/auth.html" class="fas fa-user"></a>
+        </div>
+    </header>
+
+    <section class="confirmation" id="confirmation">
+        <h1 class="heading"> <span>order</span> confirmed </h1>
+        <div class="confirmation-container">
+            <p>Thank you for your purchase!</p>
+            <p>Your order has been successfully placed. A confirmation email has been sent to your address (simulation).</p>
+            <p><strong>Order ID:</strong> <span id="order-id"></span></p>
+            <p><strong>Order Status:</strong> Processing</p>
+            <a href="/index.html" class="btn">continue shopping</a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/supabase.js"></script>
+    <script src="/script.js"></script>
+    <script src="/payment/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Generate a random order ID for display
+            document.getElementById('order-id').textContent = 'SOL' + Math.random().toString(36).substr(2, 9).toUpperCase();
+            
+            // Clear the cart after a successful order
+            localStorage.removeItem('cart');
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>

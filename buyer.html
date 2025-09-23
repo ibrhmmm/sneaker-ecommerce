@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Dashboard - Soles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <a href="/index.html" class="logo">soles</a>
+        <nav class="navbar">
+            <a href="/index.html#home">home</a>
+            <a href="/index.html#products">products</a>
+            <a href="/wishlist.html">wishlist</a>
+            <a href="/payment/cart.html">cart</a>
+        </nav>
+        <div class="icons">
+            <a href="/auth.html" class="fas fa-sign-out-alt"></a>
+        </div>
+    </header>
+
+    <section class="dashboard" id="dashboard">
+        <h1 class="heading">welcome, <span>buyer</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <h3>your orders</h3>
+                <p>5</p>
+            </div>
+            <div class="box">
+                <h3>wishlist items</h3>
+                <p>12</p>
+            </div>
+            <div class="box">
+                <h3>cart items</h3>
+                <p>3</p>
+            </div>
+        </div>
+
+        <div class="order-history">
+            <h2>order history</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>order id</th>
+                        <th>product</th>
+                        <th>price</th>
+                        <th>status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12345</td>
+                        <td>cool sneaker</td>
+                        <td>$150.00</td>
+                        <td>shipped</td>
+                    </tr>
+                    <tr>
+                        <td>67890</td>
+                        <td>another sneaker</td>
+                        <td>$200.00</td>
+                        <td>delivered</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</body>
+</html>

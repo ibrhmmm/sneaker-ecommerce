@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Soles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <a href="/index.html" class="logo">soles</a>
+        <nav class="navbar">
+            <a href="/index.html#home">home</a>
+            <a href="/index.html#products">products</a>
+            <a href="/index.html#featured">featured</a>
+            <a href="/index.html#review">review</a>
+        </nav>
+        <div class="icons">
+            <a href="/wishlist.html" class="icon-container">
+                <i class="fas fa-heart"></i>
+                <span id="wishlist-item-count" class="count"></span>
+            </a>
+            <a href="/payment/cart.html" class="icon-container">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-item-count" class="count"></span>
+            </a>
+            <a href="/auth.html" class="fas fa-user"></a>
+        </div>
+    </header>
+
+    <section class="login" id="login">
+        <h1 class="heading"><span>login</span></h1>
+        <div class="login-container">
+            <form id="login-form">
+                <div class="input-box">
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-box">
+                    <select id="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="admin">Admin</option>
+                        <option value="seller">Seller</option>
+                        <option value="buyer">Buyer</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="/auth.js"></script>
+</body>
+</html>

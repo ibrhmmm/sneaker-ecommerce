@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soles - Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/payment/cart.css">
+</head>
+<body>
+    <header>
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <a href="/index.html" class="logo">soles</a>
+        <nav class="navbar">
+            <a href="/index.html#home">home</a>
+            <a href="/index.html#products">products</a>
+            <a href="/index.html#featured">featured</a>
+            <a href="/index.html#review">review</a>
+        </nav>
+        <div class="icons">
+            <a href="/wishlist.html" class="icon-container">
+                <i class="fas fa-heart"></i>
+                <span id="wishlist-item-count" class="count"></span>
+            </a>
+            <a href="/payment/cart.html" class="icon-container">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-item-count" class="count"></span>
+            </a>
+            <a href="/auth.html" class="fas fa-user"></a>
+        </div>
+    </header>
+
+    <section class="cart" id="cart">
+        <h1 class="heading"> shopping <span>cart</span> </h1>
+        <div class="box-container" id="cart-container">
+            <!-- Cart items will be dynamically injected here -->
+        </div>
+        <div class="cart-total">
+            <p>Total: <span id="total-price">$0.00</span></p>
+            <a href="/payment/checkout.html" class="btn">proceed to checkout</a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/supabase.js"></script>
+    <script src="/payment/cart.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Soles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <a href="/index.html" class="logo">soles</a>
+        <nav class="navbar">
+            <a href="#">dashboard</a>
+            <a href="#">users</a>
+            <a href="#">products</a>
+            <a href="#">orders</a>
+        </nav>
+        <div class="icons">
+            <a href="/auth.html" class="fas fa-sign-out-alt"></a>
+        </div>
+    </header>
+
+    <section class="dashboard" id="dashboard">
+        <h1 class="heading">admin <span>dashboard</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <h3>total users</h3>
+                <p>1,234</p>
+            </div>
+            <div class="box">
+                <h3>total products</h3>
+                <p>567</p>
+            </div>
+            <div class="box">
+                <h3>total orders</h3>
+                <p>8,901</p>
+            </div>
+            <div class="box">
+                <h3>revenue</h3>
+                <p>$123,456</p>
+            </div>
+        </div>
+
+        <div class="user-list">
+            <h2>user management</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>username</th>
+                        <th>role</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>buyer</td>
+                        <td>buyer</td>
+                        <td><a href="#" class="btn">edit</a> <a href="#" class="btn">delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>seller</td>
+                        <td>seller</td>
+                        <td><a href="#" class="btn">edit</a> <a href="#" class="btn">delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</body>
+</html>

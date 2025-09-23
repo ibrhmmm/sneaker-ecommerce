@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - Soles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <a href="/index.html" class="logo">soles</a>
+        <nav class="navbar">
+            <a href="#">dashboard</a>
+            <a href="#">products</a>
+            <a href="#">orders</a>
+        </nav>
+        <div class="icons">
+            <a href="/auth.html" class="fas fa-sign-out-alt"></a>
+        </div>
+    </header>
+
+    <section class="dashboard" id="dashboard">
+        <h1 class="heading">seller <span>dashboard</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <h3>total products</h3>
+                <p>50</p>
+            </div>
+            <div class="box">
+                <h3>total orders</h3>
+                <p>1,234</p>
+            </div>
+            <div class="box">
+                <h3>pending orders</h3>
+                <p>56</p>
+            </div>
+            <div class="box">
+                <h3>revenue</h3>
+                <p>$12,345</p>
+            </div>
+        </div>
+
+        <div class="add-product">
+            <h2>add new product</h2>
+            <form>
+                <div class="input-box">
+                    <input type="text" placeholder="Product Name" required>
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Price" required>
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Stock Quantity" required>
+                </div>
+                <div class="input-box">
+                    <input type="file" required>
+                </div>
+                <button type="submit" class="btn">Add Product</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>

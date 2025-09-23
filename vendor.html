@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard - Soles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <a href="/index.html" class="logo">soles</a>
+        <nav class="navbar">
+            <a href="#add-product">Add Product</a>
+            <a href="#my-products">My Products</a>
+        </nav>
+        <div class="icons">
+            <a href="/auth.html" class="fas fa-user"></a>
+            <a href="#" id="logout-button" class="fas fa-sign-out-alt"></a>
+        </div>
+    </header>
+
+    <section class="vendor-dashboard">
+        <h1 class="heading">Vendor <span>Dashboard</span></h1>
+
+        <div id="add-product" class="dashboard-section">
+            <h2>Add New Product</h2>
+            <form id="add-product-form">
+                <div class="input-group">
+                    <input type="text" id="product-name" placeholder="Product Name" required>
+                    <input type="text" id="product-image" placeholder="Image URL" required>
+                    <input type="number" id="product-price" placeholder="Retail Price" required>
+                    <input type="number" id="product-quantity" placeholder="Quantity" required>
+                </div>
+                <button type="submit" class="btn">Add Product</button>
+            </form>
+        </div>
+
+        <div id="my-products" class="dashboard-section">
+            <h2>My Products</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="my-products-body">
+                        <!-- Vendor's products will be dynamically injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/supabase.js"></script>
+    <script src="/vendor.js"></script>
+</body>
+</html>

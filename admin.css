@@ -1,0 +1,54 @@
+.admin-dashboard {
+    padding: 2rem 9%;
+}
+
+.admin-dashboard .heading {
+    text-align: center;
+    padding-bottom: 2rem;
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+}
+
+.admin-dashboard .heading span {
+    color: var(--primary-color);
+}
+
+.admin-dashboard .dashboard-section {
+    margin-bottom: 3rem;
+}
+
+.admin-dashboard .dashboard-section h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 1rem;
+}
+
+.admin-dashboard .table-container {
+    overflow-x: auto;
+}
+
+.admin-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-dashboard th, .admin-dashboard td {
+    padding: 1.5rem;
+    text-align: left;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard thead {
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+.admin-dashboard th {
+    font-size: 1.6rem;
+}
+
+.admin-dashboard td {
+    font-size: 1.4rem;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - Soles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <a href="/index.html" class="logo">soles</a>
+        <nav class="navbar">
+            <a href="/index.html#home">home</a>
+            <a href="/index.html#products">products</a>
+            <a href="/index.html#featured">featured</a>
+            <a href="/index.html#review">review</a>
+        </nav>
+        <div class="icons">
+            <a href="/wishlist.html" class="icon-container">
+                <i class="fas fa-heart"></i>
+                <span id="wishlist-item-count" class="count"></span>
+            </a>
+            <a href="/payment/cart.html" class="icon-container">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-item-count" class="count"></span>
+            </a>
+            <a href="/auth.html" class="fas fa-user"></a>
+        </div>
+    </header>
+
+    <section class="wishlist" id="wishlist">
+        <h1 class="heading">my <span>wishlist</span></h1>
+        <div class="box-container" id="wishlist-container">
+            <!-- Wishlist items will be injected here by JavaScript -->
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/supabase.js"></script>
+    <script src="/script.js"></script>
+    <script src="/payment/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wishlistContainer = document.getElementById('wishlist-container');
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            updateHeaderCounts();
+
+            if (wishlist.length === 0) {
+                wishlistContainer.innerHTML = '<p style="text-align: center; font-size: 1.5rem; color: #666;">Your wishlist is empty.</p>';
+                return;
+            }
+
+            wishlist.forEach(item => {
+                const wishlistBox = document.createElement('div');
+                wishlistBox.classList.add('box');
+                const availableSizes = item.sizes || {};
+                const sizeOptions = Object.keys(availableSizes).filter(size => availableSizes[size] > 0).map(size => `<option value="${size}">${size}</option>`).join('');
+
+                wishlistBox.innerHTML = `
+                    <img src="${item.image_url}" alt="${item.name}">
+                    <div class="content">
+                        <h3>${item.name}</h3>
+                        <div class="price">$${item.price.toFixed(2)}</div>
+                        ${sizeOptions.length > 0 ? `<select class="size-selector"><option value="">Select Size</option>${sizeOptions}</select>` : '<p>Out of Stock</p>'}
+                        <a href="#" class="btn add-to-cart-btn ${sizeOptions.length === 0 ? 'disabled' : ''}">add to cart</a>
+                        <a href="#" class="btn remove-from-wishlist-btn">remove</a>
+                    </div>
+                `;
+                wishlistContainer.appendChild(wishlistBox);
+
+                wishlistBox.querySelector('.add-to-cart-btn').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const sizeSelector = wishlistBox.querySelector('.size-selector');
+                    const selectedSize = sizeSelector ? sizeSelector.value : null;
+                    if (sizeOptions.length > 0 && !selectedSize) {
+                        alert('Please select a size.');
+                        return;
+                    }
+                    addToCart(item, selectedSize);
+                });
+
+                wishlistBox.querySelector('.remove-from-wishlist-btn').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    removeFromWishlist(item.id);
+                    wishlistBox.remove();
+                    if (document.getElementById('wishlist-container').children.length === 0) {
+                        wishlistContainer.innerHTML = '<p style="text-align: center; font-size: 1.5rem; color: #666;">Your wishlist is empty.</p>';
+                    }
+                });
+            });
+
+            function removeFromWishlist(productId) {
+                let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                wishlist = wishlist.filter(item => item.id !== productId);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                updateHeaderCounts();
+            }
+        });
+    </script>
+</body>
+</html>
