@@ -3,7 +3,7 @@
 
 Welcome to SneakerHub, a dynamic e-commerce website for buying and selling the latest and greatest sneakers. This project is a complete front-to-back solution, featuring a customer-facing storefront, an admin dashboard for product management, and a robust data pipeline for populating the product catalog.
 
-## ✨ Features
+##  Features
 
 -   **Dynamic Product Catalog:** Browse a wide variety of sneakers, with details, images, and pricing.
 -   **User Authentication:** Secure user sign-up and login functionality.
@@ -12,14 +12,14 @@ Welcome to SneakerHub, a dynamic e-commerce website for buying and selling the l
 -   **Admin Dashboard:** A dedicated interface for administrators to manage inventory, view products, and add new admins.
 -   **Automated Data Pipeline:** Scripts to fetch sneaker data from external APIs, process it, and upload it directly to the Supabase database.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 -   **Frontend:** HTML5, CSS3, JavaScript
 -   **Backend & Database:** [Supabase](https://supabase.io/)
 -   **Data Processing:** Python, Node.js
 -   **Development Environment:** Nix (via `.idx/dev.nix`)
 
-## 📂 Project Structure
+##  Project Structure
 
 Here is a brief overview of the key files and directories:
 
@@ -41,7 +41,7 @@ Here is a brief overview of the key files and directories:
 └── README.md             # You are here!
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Environment Setup
 
@@ -80,7 +80,7 @@ Finally, use the `upload_to_supabase.js` script to read `sneakers.csv` and uploa
 node upload_to_supabase.js
 ```
 
-## 🌐 Usage
+##  Usage
 
 -   **Main Site:** Open `index.html` to browse the sneaker catalog.
 -   **Admin Panel:** Open `admin.html` to access the administrative dashboard.
